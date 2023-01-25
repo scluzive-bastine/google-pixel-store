@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root {
+    --button-main-background-color: "#1967D2";
+    --button-outline-border-color: "#5F6368";
+    --button-outline-text-color: "#202124";
+    --button-outline-hover-color: "#5F6368";
+    --theme-text-color: "#3C4043";
+    --theme-a-hover-color: "#1967d2";
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Urbanist",Arial,sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navigation */
+.navigation {
+    height: 56px;
+    width: 100%;
+    position: relative;
+    z-index: 91;
+}
+.navigation .navigation-container {
+    display: flex;
+    max-width: 1440px;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    border-bottom: 1px solid transparent;
+    box-sizing: border-box;
+    flex-direction: row;
+    margin: 0 auto;
+}
+.navigation .nav-pull-left, .nav-pull-right {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+.nav-pull-left .menu-icon {
+    width: 24px;
+    height: 24px;
+    -webkit-tap-highlight-color: transparent;
+    color: rgb(95,99,104);
+    fill: rgb(95,99,104);
+    transition: all 80ms ease-out;
+    margin-right: 20px;
+    display: none;
+}
+.navigation .products {
+    margin-left: 24px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.navigation .products a {
+    color: #3C4043;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    padding-top: 5px;
+    position: relative;
+    transition: color 350ms ease;
+}
+.navigation .products a::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 48px;
+    min-height: 48px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.navigation .products a:hover {
+    color: #1967d2;
+}
+.navigation .products a~a {
+    margin-left: 20px;
+}
+.logo {
+    width: 24px;
+    height: 24px;
+}
+
+.nav-pull-right {
+    position: relative;
+
+}
+
+.nav-pull-right .icon {
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    color: rgb(95,99,104);
+    fill: rgb(95,99,104);
+    transition: all 80ms ease-out;
+    margin-left: 24px;
+}
+.nav-pull-right .icon:hover {
+    color: #1967d2;
+    fill: #1967d2;
+}
+
+.nav-pull-right .profile-image {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    border-radius: 50%;
+}
+.nav-pull-right .profile-image img {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .nav-pull-left .menu-icon {
+        display: inline-block;
+    }
+    .nav-pull-left .products {
+        display: none;
+    }
+     .nav-pull-right .help-icon {
+        display: none;
+     }
+    .nav-pull-right .icon {
+        margin-left: 16px;
+    }
+}
+  
+  
+
+/* ./ Navigation */
