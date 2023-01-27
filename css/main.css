@@ -44,6 +44,29 @@ button {
     position: relative;
     transition: all 250ms cubic-bezier(0.1, 0.1, 0, 1);
     text-decoration: none;
+    cursor: pointer;
+}
+
+.button-default {
+    background-color: var(--button-main-background-color);
+    color: #fff;
+    padding: 8px 20px;
+    border: 0;
+    border-radius: 4px;
+}
+
+.button-default:hover {
+    background: linear-gradient(0deg, rgb(25 24 24 / 16%), rgb(25 24 24 / 16%)),
+        #1967d2;
+}
+.button-no-outline {
+    background-color: transparent;
+    color: var(--theme-a-hover-color);
+    border: 0;
+    width: fit-content;
+}
+.button-no-outline:hover {
+    background-color: #f6fafe;
 }
 
 .standard-heading {
@@ -56,6 +79,13 @@ button {
         font-size: 24px;
         line-height: 30px;
     }
+}
+
+.dotted-underline {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 3.5px;
+    text-underline-offset: 1px;
 }
 
 /* Navigation */
@@ -190,14 +220,14 @@ button {
     position: relative;
     overflow: hidden;
 }
-.hero-section .hero-header, .help-section .help-section--heading {
+.hero-section .hero-header, .help-section .help-section--heading, .pixel-types--section .pixel-types-section--heading {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     column-gap: 24px;
     margin: 0 auto;
     max-width: 1392px;
 }
-.hero-section .hero-header div, .help-section .title {
+.hero-section .hero-header div, .help-section .title, .pixel-types--section .title {
     padding-top: 30px;
     grid-column-start: 3;
     grid-column-end: span 8;
@@ -451,7 +481,7 @@ button {
 
 
 /* Help section */
-.help-section .title{
+.help-section .title, .pixel-types--section .title{
     text-align: center;
     color: var(--theme-text-color);
     font-weight: 700;
@@ -535,3 +565,279 @@ button {
 
 
 /* ./ Help section */
+
+
+/* Pixel Types */
+.pixel-types--section {
+    margin-top: var(--section-space);
+    color: var(--theme-text-color);
+}
+.pixel-types--section .pixel-types-grid--container, .pixel-types-details-grid--container, .pixel-specs--container {
+    grid-template-columns: var(--section-grid-template);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 24px;
+    margin-top: var(--section-space);
+    display: grid;
+    column-gap: 24px;
+}
+
+.pixel-types--section .pixel-type-grid--content, .pixel-types-details-grid--content {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-start: 2;
+    grid-column-end: span 10;
+    column-gap: 24px;
+    display: grid;
+}
+
+.pixel-type-grid--content .pixel-container {
+    background-color: #F8F9FA;
+    border-radius: 20px;
+    position: relative;
+}
+
+.pixel-type-grid--content .pixel-container span {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    color: var(--theme-text-color);
+    padding: 0 8px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    background-color: #E8F0FE;
+}
+
+.pixel-type-grid--content .pixel-container .image-container{
+    aspect-ratio: 740 / 592;
+    width: 100%;
+    height: 100%;
+}
+.pixel-type-grid--content .pixel-container .image-container img {
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.pixel-type-grid--content .pixel-container .colors {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 12px;
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+}
+.pixel-type-grid--content .pixel-container .colors div{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    border: 1px solid var(--button-outline-border-color);
+}
+.pixel-type-grid--content .pixel-container:nth-child(1) .colors div:nth-child(1) {
+    background-color: #898C8A;
+}
+.pixel-type-grid--content .pixel-container:nth-child(1) .colors div:nth-child(2) {
+    background-color: #F7F7F7;
+}
+.pixel-type-grid--content .pixel-container:nth-child(1) .colors div:nth-child(3) {
+    background-color: #252525;
+}
+.pixel-type-grid--content .pixel-container:nth-child(2) .colors div:nth-child(1) {
+    background-color: #D5E0A0;
+}
+
+.pixel-type-grid--content .pixel-container:nth-child(2) .colors div:nth-child(2) {
+    background-color: #F7F7F7;
+}
+
+.pixel-type-grid--content .pixel-container:nth-child(2) .colors div:nth-child(3) {
+    background-color: #252525;
+}
+.pixel-type-grid--content .pixel-container:nth-child(3) .colors div:nth-child(1) {
+    background-color: #DBE5DD;
+}
+
+.pixel-type-grid--content .pixel-container:nth-child(3) .colors div:nth-child(2) {
+    background-color: #CCCBC9;
+}
+
+.pixel-type-grid--content .pixel-container:nth-child(3) .colors div:nth-child(3) {
+    background-color: #707070;
+}
+
+.pixel-types--section .pixel-types-details-grid--container {
+    margin-top: 40px;
+}
+.pixel-types-details-grid--container .pixel-types-details--container .header{
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 600;
+}
+.pixel-types-details-grid--container .pixel-types-details--container .sub-title {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 10px;
+}
+.pixel-types-details-grid--container .pixel-types-details--container .price {
+    margin-top: 18px;
+}
+.pixel-types-details-grid--container .pixel-types-details--container .price div:nth-child(1) {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+}
+.pixel-types-details-grid--container .pixel-types-details--container .price div:nth-child(2) {
+    font-size: 12px;
+    line-height: 20px;
+    margin-top: 4px;
+}
+
+.pixel-types-details-grid--container .pixel-types-details--container .buttons {
+    margin-top: 16px;
+}
+
+.pixel-types-details-grid--container .pixel-types-details--container .buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.pixel-specs--container .pixel-column--container {
+    grid-column-start: 2;
+    grid-column-end: span 10;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+.pixel-specs--container .pixel-column--container .container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.pixel-specs--container .pixel-specs--grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 24px;
+}
+.specs-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    color: var(--theme-text-color);
+}
+.specs-content .specs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.pixel-specs--container .container .header {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 700;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.pixel-specs--container .header .divider {
+    width: 100%;
+    height: 1px;
+    margin: 0 auto;
+    line-height: 0;
+    background-color: #DADCE0;
+}
+
+.specs-content .specs .header{
+    font-size: 40px;
+    line-height: 42px;
+    font-weight: 700;
+}
+.specs-content .specs .header .img--container {
+    width: 48px;
+    height: 48px;
+    position: relative;
+}
+.specs-content .specs .header .img--container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+.specs-content .specs .description .text-container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.specs-content .specs .description {
+        font-weight: 500;
+}
+
+.specs-content .specs .description .type{
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 3.5px;
+    text-underline-offset: 1px;
+}
+.specs-content .specs .description div {
+    margin-top: 5px;
+}
+
+.specs-content .button-no-outline {
+    margin-top: 24px;
+}
+
+.compare-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+
+
+
+
+
+@media (max-width: 1023px) {
+    .pixel-types--section .pixel-types-grid--container {
+        margin-top: 20px;
+    }
+    .pixel-types--section .pixel-types-details-grid--container {
+        margin-top: 20px;
+    }
+    .pixel-type-grid--content .pixel-container .image-container {
+        aspect-ratio: 264 / 364;
+    }
+    .pixel-types--section .pixel-types-grid--container, .pixel-types-details-grid--container, .pixel-specs--container .pixeel-column--container{
+        padding: 16px;
+    }
+    .pixel-types--section .pixel-type-grid--content, .pixel-types-details-grid--content,.pixel-specs--container .pixel-column--container,.pixel-specs--container .pixel-specs--grid{
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-start: 1;
+        grid-column-end: span 12;
+    }
+    .pixel-specs--container {
+        margin-top: 40px;
+    }
+    .pixel-specs--container .pixel-column--container {
+        gap: 40px;
+    }
+    .pixel-type-grid--content .pixel6a, .pixel-types-details-grid--content .pixel6a {
+        display: none;
+    }
+
+    .pixel-types-details-grid--container .pixel-types-details--container .buttons { 
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .pixel-types-details-grid--container .pixel-types-details--container .buttons button {
+        width: fit-content;
+    }
+
+    .pixel-specs--grid .specs-content~.specs-content~.specs-content {
+        display: none;
+    }
+}
+
+/* ./ Pixel Types */
